@@ -35,7 +35,7 @@ inquirer
 
       const repoNamesStr = repoNames.join("\n");
 
-      fs.writeFile("repos.txt", repoNamesStr, function(err) {
+      fs.writeFile("readMe.txt", repoNamesStr, function(err) {
         if (err) {
           throw err;
         }
