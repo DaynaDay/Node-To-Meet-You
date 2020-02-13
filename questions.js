@@ -1,7 +1,5 @@
-var inquirer = require("inquirer");
 
-inquirer
-  .prompt([
+module.exports = [
     {
       type: "input",
       message: "What is your project title?",
@@ -22,25 +20,25 @@ inquirer
       message: "What is your Github name?",
       name: "username",
     },
-    
-  ]);
-
-  .then(function({ username }) {
-    const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
-
-    axios.get(queryUrl).then(function(res) {
-      const repoNames = res.data.map(function(repo) {
-        return repo.name;
-      });
-
-      const repoNamesStr = repoNames.join("\n");
-
-      fs.writeFile("readMe.txt", repoNamesStr, function(err) {
-        if (err) {
-          throw err;
-        }
-
-        console.log(`Saved ${repoNames.length} repos`);
-  });
+    {
+      type: "input",
+      message: "What is your Github email?",
+      name: "email",
+    },
+  ];
 
   
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
